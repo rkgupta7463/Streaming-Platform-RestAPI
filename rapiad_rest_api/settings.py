@@ -123,6 +123,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Enable WhiteNoise compression and caching
 STORAGES = {
+    # Default storage for user uploads / media files
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    # WhiteNoise storage for static files (CSS, JS, Swagger UI)
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
