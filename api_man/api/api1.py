@@ -51,7 +51,7 @@ def get_supported_platform_country(request,name:str):
         return {"status":True,"message":f"{name} requested country service not exist!","data":""}
 
 @app.get('search/country/platform')
-def get_supported_platform_country(request,cname:str,pname:str=None):
+def get_search_country_platform_country(request,cname:str,pname:str=None):
     
     try:
         country=Country.objects.filter(name__icontains=cname).first()
@@ -70,7 +70,7 @@ def get_supported_platform_country(request,cname:str,pname:str=None):
 
 
 @app.get('suggestion/supported/country/')
-def get_supported_platform_country(request,name:str):
+def get_suggestion_supported_country(request,name:str):
     
     try:
         country=Country.objects.filter(name__icontains=name)
